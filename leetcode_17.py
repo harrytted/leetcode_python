@@ -8,6 +8,8 @@
 # 输入："23"
 # 输出：["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
 
+# 解题思路
+# 使用队列，先将输入的 digits 中第一个数字对应的每一个字母入队，然后将出队的元素与第二个数字对应的每一个字母组合后入队...直到遍历到 digits 的结尾。最后队列中的元素就是所求结果
 
 class Solution(object):
     def letterCombinations(self, digits):
