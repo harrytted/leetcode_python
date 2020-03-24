@@ -53,6 +53,6 @@ class Solution(object):
     def is_BST(self, root, min, max):
         if not root:
             return True
-        if root.val <= min or root >= max:
+        if root.val <= min or root.val >= max:
             return False
         return self.is_BST(root.left, min, root.val) and self.is_BST(root.right, root.val, max)
