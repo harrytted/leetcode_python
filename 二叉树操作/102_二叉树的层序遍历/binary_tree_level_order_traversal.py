@@ -46,5 +46,6 @@ class Solution(object):
         if not root: return
         if len(res) < level + 1:
             res.append([])
+        res[level].append(root.val)
         self.ret_list(root.left, level + 1, res)
         self.ret_list(root.right, level + 1, res)
