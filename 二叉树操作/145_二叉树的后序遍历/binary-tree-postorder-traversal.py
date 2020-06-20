@@ -52,7 +52,7 @@ class Solution(object):
         :return:
         """
         res = []
-        if not res
+        if not res:
             return res
         stack1 = []
         stack1.append(root)
