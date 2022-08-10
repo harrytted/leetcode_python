@@ -2,20 +2,28 @@
 
 
 # 有多个整数闭区间，区间之间可能存在重叠，请合并区间，减少区间数。
-# 如 [[1,3],[6,10],[2,4],[7,9],[11,12]]
+# 如 [[1,3],[6,11],[2,4],[7,9],[11,12]]
 # 合并后：[[1,4],[6,12]]
 
 
-# def merge_list(alist):
-#     if not alist:
-#         return
-#     ori = []
-#     for a in alist:
-#         ori.append(a[0])
-#         ori.append(a[1])
-#     sorted(ori)
-#     ori = [1,2,3,4,6,7,9,10,11,12]
-#     for i in ori:
+def merge_li(l):
+    if not l:
+        return []
+    l = sorted(l, key=lambda x:x[0])
+    res = []
+    for i in range(len(l)):
+        pre = l[i]
+        for j in range(i+1, len(l)-1):
+            nxt = l[j]
+            if pre[1] >= nxt[0]:
+                res.append([pre[0], nxt[1]])
+            else:
+                continue
+    return res
+
+
+ll = [[1, 3], [6, 11], [2, 4], [7, 9], [11, 12]]
+merge_li(ll)
 
 
 # 1、实现一个函数完成类似下面规则的字符串转化
