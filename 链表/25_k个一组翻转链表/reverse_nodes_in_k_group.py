@@ -25,6 +25,7 @@ class ListNode:
 
 
 class Solution:
+
     def reverseKGroup(self, head: ListNode, k: int) -> ListNode:
         dummy = ListNode(0)
         dummy.next = head
